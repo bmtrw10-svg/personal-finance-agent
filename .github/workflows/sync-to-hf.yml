@@ -12,10 +12,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          lfs: true
+          lfs: false  # No large files, so disabled
       - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          git remote add space https://$HF_TOKEN@huggingface.co/spaces/bmtrw/personal-finance-agent
-          git push space main --force
+        run: git push https://bmtrw:$HF_TOKEN@huggingface.co/spaces/bmtrw/personal-finance-agent main --force
