@@ -68,7 +68,7 @@ tools = [analyze_expenses, suggest_budget]
 
 # LLM setup
 llm = ChatGroq(
-    groq_api_key=st.secrets["GROQ_API_KEY"],
+    groq_api_key=st.secrets["GROQAPIKEY"],
     model_name="llama-3.1-8b-instant",
     temperature=0.7
 )
